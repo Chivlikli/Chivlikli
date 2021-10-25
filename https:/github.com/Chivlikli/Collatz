@@ -1,0 +1,22 @@
+import random
+
+import pandas as pd
+
+base.clear()
+
+base = []
+evenodd = random.randint(0, 100)
+base.append(evenodd)
+
+while base[-1] != 1:
+  even = base[-1] / 2
+  odd = base[-1] * 3 + 1
+  
+  if base[-1] % 2 == 0:
+    base.append(even)
+  else:
+    base.append(odd)
+
+  df = pd.DataFrame(base)
+
+df.plot()
